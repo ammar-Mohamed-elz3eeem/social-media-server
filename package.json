@@ -23,7 +23,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll  --detectOpenHandles",
-    "start": "ts-node-dev -r tsconfig-paths/register ./src/server.ts",
+    "build": "tsc --project tsconfig.json && tscpaths --project tsconfig.json -s ./src -o ./dist",
+    "start": "node ./dist/server.js",
     "migrate": "node-pg-migrate --verbose -f './configs/db.json'"
   },
   "author": "",
@@ -48,6 +49,7 @@
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
+    "tscpaths": "^0.0.9",
     "typescript": "^5.3.3",
     "typescript-eslint-parser": "^22.0.0"
   }
