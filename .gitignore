@@ -1,0 +1,9 @@
+node_modules
+configs
+migrations
+__tests__
+test_setup
+.env
+package-lock.json
+.env.local
+.env.test
