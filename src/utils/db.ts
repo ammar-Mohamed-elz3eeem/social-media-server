@@ -3,11 +3,7 @@ import dbConfig from "../config/database";
 import { logger } from "./logger";
 
 const pgConfig = {
-  user: dbConfig.user || '',
-  password: dbConfig.password || '',
-  host: dbConfig.host || '',
-  port: Number(dbConfig.port) || 0,
-  database: dbConfig.database || '',
+  connectionString: process.env.DATABASE_URL,
   max: dbConfig.maxConnections,
   idleTimeoutMillis: dbConfig.idleTimeoutMillis
 };
