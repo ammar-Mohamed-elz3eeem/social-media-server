@@ -6,7 +6,7 @@ const pgConfig = {
   connectionString: process.env.DATABASE_URL,
   max: dbConfig.maxConnections,
   idleTimeoutMillis: dbConfig.idleTimeoutMillis,
-  ssl: true
+  ssl: { rejectUnauthorized: false }
 };
 
 export const pool = new Pool(pgConfig);
