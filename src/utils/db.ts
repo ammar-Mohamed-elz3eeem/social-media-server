@@ -5,7 +5,8 @@ import { logger } from "./logger";
 const pgConfig = {
   connectionString: process.env.DATABASE_URL,
   max: dbConfig.maxConnections,
-  idleTimeoutMillis: dbConfig.idleTimeoutMillis
+  idleTimeoutMillis: dbConfig.idleTimeoutMillis,
+  ssl: true
 };
 
 export const pool = new Pool(pgConfig);
