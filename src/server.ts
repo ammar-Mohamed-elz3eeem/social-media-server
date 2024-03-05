@@ -46,10 +46,10 @@ app.all("*", (req: Request, res: Response) => {
 
 app.use(errorHandler);
 
-if (process.env.TEST_ENV) {
-  app.listen(PORT, () => {
-    console.log('app is running on port: ', PORT);
-  });
-}
+// if (!process.env.TEST_ENV) {
+app.listen(PORT, () => {
+  console.log('app is running on port: ', PORT);
+});
+// }
 
 export default app;
