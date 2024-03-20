@@ -5,6 +5,7 @@ import authConfig from '@/config/auth';
 
 export const handleRefreshtoken = async (req: Request, res: Response) => {
   const cookies = req.cookies;
+  console.log(cookies);
   if (!cookies.jwt) {
     return res.status(401).json({ message: 'Unauthorized' });
   }

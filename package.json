@@ -25,6 +25,7 @@
     "test": "jest --watchAll  --detectOpenHandles",
     "build": "tsc --project tsconfig.json && tscpaths --project tsconfig.json -s ./src -o ./dist",
     "start": "node ./dist/server.js",
+    "dev": "ts-node-dev -r tsconfig-paths/register ./src/server.ts",
     "migrate": "node-pg-migrate --verbose -f './configs/db.json'"
   },
   "author": "",
