@@ -37,7 +37,25 @@
 - /posts
   - GET / get all posts from website backend
   - POST / add new post to the website data -> { created_by: number, content: string, images: array } (this route requires credentials from sent in request)
+  
+  - GET /:id Get single post from database whose id = :id
+  - PUT /:id Edit single post on database whose id = :id -> data {
+    content?: string,
+    images?: array
+  }
+  - DELETE /:id Delete Post from database whose id = :id
 
+  - POST /:id/like like post whose id = :id if not liked or dislike if already liked -> { total_likes: number }
 
+  - POST /:id/save save post whose id = :id if not saved or remove from saved if already saved
 
+  - POST /:id/share share post whose id = :id
 
+  - POST /:id/comment add comment to post whose id = :id -> {
+    content: string, 
+    parent_id: number
+    }
+
+  - DELETE /:id/comment/:comment_id delete comment whose id = :comment_id
+
+  - PUT /:id/comment/:comment_id update comment whose id = :comment_id -> { content: string }
